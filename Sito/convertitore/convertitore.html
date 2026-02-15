@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Converter</title>
+    <link rel="icon" href="iconaConv.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stile.css">
+</head>
+<body>
+<!-- Toolbar -->
+<div class="toolbar">
+    <a href="/index.html" target="_blank"><img src="/img/home__.png" alt="home"></a>
+    <a href="https://www.instagram.com/nazzaro__/" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
+    <a href="https://www.facebook.com/profile.php?id=100072541764085" target="_blank"><img src="/img/facebook.png" alt="Facebook"></a>
+    <a href="https://www.youtube.com/channel/UCSNos0Ikbp_P7d4r8YioqJg" target="_blank"><img src="/img/youtube.png" alt="YouTube"></a>
+</div><br><br>
+
+<center>
+<div class="container fade-in">
+    <h1>Number Converter</h1>
+    <form id="converterForm">
+        <input type="text" id="numberInput" placeholder="Enter number">
+        <select id="fromBase">
+            <option value="" disabled selected>(Choose the base to convert from)</option>
+            <option value="2">Binary</option>
+            <option value="8">Octal</option>
+            <option value="10">Decimal</option>
+            <option value="16">Hexadecimal</option>
+        </select>
+        <button type="button" onclick="convert()" class="convert-link">Convert</button>
+    </form>
+    <div class="result">
+        <p id="decimalResult"></p>
+        <p id="binaryResult"></p>
+        <p id="octalResult"></p>
+        <p id="hexadecimalResult"></p>
+    </div>
+
+    <div class="ad-container fade-in">
+        <div class="ad">
+<script>!function(d,l,e,s,c){e=d.createElement("script");e.src="//ad.altervista.org/js.ad/size=2X2/?ref="+encodeURIComponent(l.hostname+l.pathname)+"&r="+Date.now();s=d.scripts;c=d.currentScript||s[s.length-1];c.parentNode.insertBefore(e,c)}(document,location)</script>        </div>
+    </div>
+</div>
+</center>
+
+<footer class="fade-in">
+    <a href="https://www.iubenda.com/privacy-policy/50715823" rel="noreferrer nofollow" target="_blank">Privacy Policy</a>
+    <a href="#" role="button" class="iubenda-advertising-preferences-link">Customize advertising tracking</a>
+</footer>
+
+<script>
+    function convert() {
+        var numberInput = document.getElementById('numberInput').value;
+        var fromBase = parseInt(document.getElementById('fromBase').value);
+
+        var decimalResult;
+        if (fromBase === 2) {
+            // If the base is 2 (binary), interpret the number directly as binary
+            decimalResult = parseInt(numberInput, 2);
+        } else {
+            // Otherwise, convert the number to decimal
+            decimalResult = parseInt(numberInput, fromBase);
+        }
+
+        document.getElementById('decimalResult').innerText = 'Decimal: ' + decimalResult;
+
+        var binaryResult = decimalResult.toString(2);
+        document.getElementById('binaryResult').innerText = 'Binary: ' + binaryResult;
+
+        var octalResult = decimalResult.toString(8);
+        document.getElementById('octalResult').innerText = 'Octal: ' + octalResult;
+
+        var hexadecimalResult = decimalResult.toString(16).toUpperCase();
+        document.getElementById('hexadecimalResult').innerText = 'Hexadecimal: ' + hexadecimalResult;
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+    <link rel="stylesheet" type="text/css" href="stylee.css">
+    <title>Health and Fitness Apps</title>
+</head>
+<body>
+    <div class="toolbar fade-in">
+        <a href="/index.html" target="_blank"><img src="/img/home__.png" alt="home"></a>
+        <a href="https://www.instagram.com/nazzaro__/" target="_blank"><img src="/img/instagram.png" alt="Instagram"></a>
+        <a href="https://www.facebook.com/profile.php?id=100072541764085" target="_blank"><img src="/img/facebook.png" alt="Facebook"></a>
+        <a href="https://www.youtube.com/channel/UCSNos0Ikbp_P7d4r8YioqJg" target="_blank"><img src="/img/youtube.png" alt="YouTube"></a>
+    </div><br><br>
+    <div id="content">
+        <header>
+            <h1>Health and Fitness Apps</h1>
+            <nav id="mainMenu">
+                <a href="#" id="menuToggle">☰</a>
+                <ul>
+                    <li><a href="smartwatch.html">Smartwatches</a></li>
+                    <li><a href="tecsal.html">Health Technology</a></li>
+                    <li><a href="wellness.html">Wellness</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="container fade-in">
+            <p>Health and fitness apps are a valuable resource for anyone looking to adopt an active and well-balanced lifestyle. These digital tools offer a wide range of features to support users in achieving their fitness and health goals.</p>
+            <p>With these apps, it is possible to access personalized workout programs based on your goals, fitness level, and preferences. In addition to tracking daily physical activities, many apps offer nutritional advice tailored to individual needs, helping to maintain a balanced and sustainable diet.</p>
+            <div class="image-right"> <!-- Modification: position the image to the right of the text -->
+                <img src="images/app.png" alt="Fitness App">
+            </div>
+            <p>The social component of fitness apps is a motivating factor, allowing users to connect with the community, share their achievements, and participate in virtual challenges. This sense of belonging and friendly competition can greatly increase motivation and commitment to a healthy lifestyle.</p>
+            <p>Some apps also integrate advanced features, such as sleep tracking, stress management, and integration with fitness devices like smartwatches. This interconnection of data provides a holistic view of health and wellness, facilitating informed decision-making to improve quality of life.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("menuToggle").addEventListener("click", function() {
+            var menu = document.querySelector("nav ul");
+            menu.style.display = (menu.style.display === "none" || menu.style.display === "") ? "block" : "none";
+        });
+    </script>
+</body>
+</html>

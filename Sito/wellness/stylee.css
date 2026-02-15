@@ -1,0 +1,168 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace; /* Font monospazio per un effetto tecnico */
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* Sfondo scuro con sfumature blu */
+    color: #e0e0e0; /* Testo chiaro per contrasto */
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e); /* Gradienti scuri */
+    color: #00ffcc; /* Testo neon verde acqua */
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); /* Effetto neon */
+}
+
+nav {
+    background-color: #0f0c29;
+    position: relative; /* Non fisso, si sposta con la pagina */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1; /* Sotto la toolbar */
+    border-bottom: 2px solid #00ffcc;
+    box-shadow: 0 2px 10px rgba(0, 255, 204, 0.5);
+    border-radius: 0 0 10px 10px;
+}
+
+nav a {
+    color: #00ffcc;
+    text-decoration: none;
+    padding: 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav a:hover {
+    background-color: rgba(0, 255, 204, 0.2);
+    color: #ffffff;
+}
+
+#content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 50px; /* Spazio superiore per evitare sovrapposizioni */
+}
+
+#content p {
+    text-align: justify;
+    font-size: 1.2em;
+    color: #00ffcc; /* Testo neon */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#content img {
+    max-width: 50%;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); /* Effetto neon */
+}
+
+.toolbar {
+    color: #00ffcc; /* Colore neon per la toolbar */
+    padding: 10px 20px;
+    top: 0;
+    right: 0;
+    left: 0;
+    width: auto;
+    z-index: 1000; /* Assicura che la toolbar rimanga sopra il menu */
+    display: flex;
+    justify-content: flex-end;
+    background-color: rgba(15, 12, 41, 0.9); /* Sfondo semitrasparente */
+    box-shadow: 0 2px 10px rgba(0, 255, 204, 0.5); /* Effetto neon */
+    position: relative; /* Posizione relativa, non rimane fissa */
+}
+
+.toolbar a {
+    text-decoration: none;
+    color: #00ffcc;
+    margin-left: 20px;
+}
+
+.toolbar img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+    filter: drop-shadow(0 0 5px #00ffcc); /* Ombra per le icone */
+}
+
+.image-right {
+    float: right;
+    margin: 0 0 20px 20px;
+    max-width: 40%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 255, 204, 0.5); /* Effetto neon */
+}
+
+.container {
+    max-width: 90%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #0f0c29;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); /* Effetto neon */
+    position: relative;
+    z-index: 1;
+    overflow-x: auto;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #00ffcc;
+    background-color: #0f0c29;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 255, 204, 0.5); /* Effetto neon */
+}
+
+footer a {
+    margin: 0 10px;
+    color: #ff00ff; /* Colore neon per i link */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff66ff;
+}
+
+.convert-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #ff00ff; /* Bottone neon */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.convert-link:hover {
+    background-color: #cc00cc;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

@@ -1,0 +1,99 @@
+/* Stili generali */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+    font-family: 'Verdana', sans-serif; /* Font più leggibile */
+    color: #f0f0f0; /* Colore chiaro per il testo */
+    background-color: #282828; /* Sfondo scuro */
+    line-height: 1.6;
+}
+
+/* Effetto per i titoli */
+h1, h2, h3 {
+    text-align: center;
+    color: #ffa500; /* Colore arancione per i titoli */
+    text-shadow: 0 0 5px #ffa500, 0 0 10px #ffa500;
+}
+
+/* Stili per i paragrafi */
+p {
+    text-align: justify;
+    font-size: 1.2em;
+}
+
+/* Stile per la toolbar */
+.toolbar {
+    background-color: #444;
+    padding: 10px 20px;
+    z-index: 2;
+    display: flex;
+    justify-content: center; /* Centrato */
+    border-bottom: 2px solid #ffa500;
+}
+
+.toolbar a {
+    text-decoration: none;
+    color: #ffa500;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+.toolbar a:hover {
+    color: #ff4500; /* Cambia colore al passaggio */
+}
+
+.toolbar img {
+    margin-right: 10px;
+    width: 24px;
+    height: 24px;
+}
+
+/* Stili per il contenitore principale */
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #ffa500;
+    overflow-y: auto;
+}
+
+/* Stile per i link */
+a {
+    color: #ffa500;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ff4500;
+}
+
+/* Stili per le immagini */
+img {
+    max-width: 100%;
+    margin: 20px 0;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(255, 165, 0, 0.7);
+}
+
+/* Stili per il footer */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #777;
+    padding: 20px;
+    background-color: #282828;
+    box-shadow: 0 -5px 10px #ffa500;
+}
+
+/* Animazioni */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}

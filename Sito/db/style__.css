@@ -1,0 +1,106 @@
+/* Global styles */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #1a1a1a; /* Dark background */
+  color: #00ffcc; /* Neon green text */
+  line-height: 1.6;
+}
+
+/* Header style */
+header {
+  color: #22d3ee;
+  padding: 20px;
+  text-align: center;
+  border-radius: 10px;
+  text-shadow: 0 0 10px #22d3ee; /* Subtle neon glow */
+}
+
+/* Toolbar style */
+.toolbar {
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #1a1a1a;
+}
+
+.toolbar a {
+  text-decoration: none;
+  color: #00ffcc;
+  margin-left: 20px;
+}
+
+.toolbar img {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px #00ffcc); /* Neon green shadow */
+}
+
+/* Container style */
+.container {
+  max-width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #262626; /* Darker container background */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(34, 211, 238, 0.5); /* Cyan shadow */
+}
+
+/* Content text */
+#content p {
+  font-size: 1.2em;
+  color: #00ffcc; /* Neon green */
+  text-align: justify;
+  margin-bottom: 20px;
+}
+
+/* Titles */
+h1 {
+  font-size: 2.5em;
+  color: #22d3ee; /* Cyan */
+  text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc; /* Neon glow */
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.8em;
+  color: #22d3ee; /* Cyan */
+  margin-bottom: 10px;
+  text-shadow: 0 0 5px #00ffcc; /* Neon glow */
+}
+
+/* Link styles */
+a {
+  color: #22d3ee;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #00ffcc; /* Neon green on hover */
+  text-decoration: underline;
+}
+
+/* Image styles */
+.image-right {
+  float: right;
+  margin: 0 0 20px 20px;
+  max-width: 40%;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(34, 211, 238, 0.5); /* Cyan shadow */
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #777;
+  padding: 20px;
+  background-color: #262626;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(34, 211, 238, 0.5); /* Cyan shadow */
+}

@@ -1,0 +1,101 @@
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Orbitron', sans-serif;
+  background-color: #121212; /* Darker background */
+  color: #f4f4f4; /* Light text */
+  line-height: 1.6;
+  background: linear-gradient(135deg, #2c3e50, #3498db); /* Cool dark blue gradient */
+}
+
+h1 {
+  text-align: center;
+  color: #e84393; /* Bright pink */
+  text-shadow: 0 0 10px #e84393, 0 0 20px #8e44ad; /* Pink and purple glow */
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #1c1c1c; /* Dark background for container */
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(231, 76, 60, 0.5); /* Red glow */
+  position: relative;
+  z-index: 1;
+}
+
+.toolbar {
+  color: #fff;
+  padding: 10px 20px;
+  top: 0;
+  right: 0;
+  left: 0;
+  width: auto;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+  background-color: #2c3e50; /* Dark background for toolbar */
+}
+
+.toolbar a {
+  text-decoration: none;
+  color: #00b894; /* Neon green */
+  margin-left: 20px;
+}
+
+.toolbar img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 5px #00b894); /* Neon green shadow */
+}
+
+footer {
+  position: absolute;
+  text-align: center;
+  color: #aaa;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(28, 28, 28, 0.8); /* Slightly transparent dark background */
+  padding: 20px;
+  width: 97%;
+  box-shadow: 0 0 10px rgba(231, 76, 60, 0.5); /* Red glow */
+}
+
+footer a {
+  margin: 0 10px;
+  color: #00b894; /* Neon green */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #55efc4; /* Lighter green on hover */
+}
+
+.convert-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #e84393; /* Bright pink */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.convert-link:hover {
+  background-color: #ff7675; /* Lighter pink on hover */
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
