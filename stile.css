@@ -1,0 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Mono', monospace;
+  background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+  color: #0ff;
+}
+
+h1 {
+  text-align: center;
+  color: #0ff;
+  text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+  animation: glitch 1.5s infinite;
+}
+
+@keyframes glitch {
+  0% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
+  20% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+  40% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
+  60% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+  80% { text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff; }
+  100% { text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff; }
+}
+
+ul {
+  list-style-type: none;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: rgba(15, 12, 41, 0.85);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  z-index: 1;
+  border: 1px solid #0ff;
+}
+
+.toolbar {
+  color: #0ff;
+  padding: 10px 20px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.toolbar a {
+  text-decoration: none;
+  color: #0ff;
+  margin-left: 20px;
+  transition: color 0.3s ease;
+}
+
+.toolbar a:hover {
+  color: #ff00ff;
+}
+
+.toolbar img {
+  margin-right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 50px;
+  color: #777;
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  background-color: rgba(15, 12, 41, 0.85);
+  padding: 20px;
+  border-top: 1px solid #0ff;
+}
+
+footer a {
+  margin: 0 10px;
+  color: #0ff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover {
+  color: #ff00ff;
+}
+
+.convert-link {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: #0ff;
+  color: #000;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 0 15px #0ff;
+}
+
+.convert-link:hover {
+  background-color: #ff00ff;
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
