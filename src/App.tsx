@@ -20,9 +20,24 @@ import NetworkingSection from './components/sections/NetworkingSection';
 export default function App() {
   const [activeSection, setActiveSection] = useState<Section>('home');
 
-  // Scroll to top on section change
+  // Scroll to top and update title on section change
   useEffect(() => {
     window.scrollTo(0, 0);
+    
+    // Update browser tab title
+    const sectionTitles: Record<Section, string> = {
+      home: 'NazzHub | Tech & Wellness Hub',
+      wellness: 'Tech-Wellness | NazzHub',
+      cyber: 'Cybersecurity | NazzHub',
+      linux: 'Linux & Unix | NazzHub',
+      networking: 'Networking | NazzHub',
+      hardware: 'Hardware | NazzHub',
+      db: 'Databases | NazzHub',
+      converter: 'Unit Converter | NazzHub',
+      credits: 'Credits | NazzHub'
+    };
+    
+    document.title = sectionTitles[activeSection] || 'NazzHub';
   }, [activeSection]);
 
   const renderSection = () => {
