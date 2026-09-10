@@ -9,8 +9,8 @@ import AboutSection from './components/sections/AboutSection';
 import InfrastructureSection from './components/sections/InfrastructureSection';
 import DevelopmentSection from './components/sections/DevelopmentSection';
 import CybersecuritySection from './components/sections/CybersecuritySection';
-import ContactSection from './components/sections/ContactSection';
 import BackToTop from './components/ui/BackToTop';
+import SectionDivider from './components/ui/SectionDivider';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
 const AppContent = () => {
@@ -36,7 +36,7 @@ const AppContent = () => {
       }
     );
 
-    const sections = ['home', 'about', 'infrastructure', 'development', 'cybersecurity', 'contact'];
+    const sections = ['home', 'about', 'infrastructure', 'development', 'cybersecurity'];
     sections.forEach(id => {
       const element = document.getElementById(id);
       if (element) observer.observe(element);
@@ -52,8 +52,7 @@ const AppContent = () => {
       about: { en: 'About Me | Francesco Nazzaro', it: 'Chi Sono | Francesco Nazzaro' },
       infrastructure: { en: 'Infrastructure & HomeLab', it: 'Infrastruttura & HomeLab' },
       development: { en: 'Web Apps | Francesco Nazzaro', it: 'App Web | Francesco Nazzaro' },
-      cybersecurity: { en: 'Cybersecurity | Francesco Nazzaro', it: 'Cybersecurity | Francesco Nazzaro' },
-      contact: { en: 'Contact | Francesco Nazzaro', it: 'Contatti | Francesco Nazzaro' }
+      cybersecurity: { en: 'Cybersecurity | Francesco Nazzaro', it: 'Cybersecurity | Francesco Nazzaro' }
     };
     
     document.title = sectionTitles[activeSection]?.[lang] || 'Francesco Nazzaro';
@@ -68,24 +67,28 @@ const AppContent = () => {
           <HomeSection />
         </section>
         
+        <SectionDivider />
+        
         <section id="about" className="scroll-mt-20">
           <AboutSection />
         </section>
+        
+        <SectionDivider />
         
         <section id="infrastructure" className="scroll-mt-20">
           <InfrastructureSection />
         </section>
         
+        <SectionDivider />
+        
         <section id="development" className="scroll-mt-20">
           <DevelopmentSection />
         </section>
         
+        <SectionDivider />
+        
         <section id="cybersecurity" className="scroll-mt-20">
           <CybersecuritySection />
-        </section>
-
-        <section id="contact" className="scroll-mt-20">
-          <ContactSection />
         </section>
       </main>
 

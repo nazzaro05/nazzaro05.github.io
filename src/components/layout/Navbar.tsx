@@ -24,7 +24,6 @@ const Navbar = ({ activeSection }: NavbarProps) => {
       { id: 'infrastructure', label: 'Infrastructure', icon: Server },
       { id: 'development', label: 'Web Apps', icon: Code },
       { id: 'cybersecurity', label: 'Cyber', icon: Shield },
-      { id: 'contact', label: 'Contact', icon: Mail },
     ],
     it: [
       { id: 'home', label: 'Home', icon: Home },
@@ -32,7 +31,6 @@ const Navbar = ({ activeSection }: NavbarProps) => {
       { id: 'infrastructure', label: 'Infrastruttura', icon: Server },
       { id: 'development', label: 'Web App', icon: Code },
       { id: 'cybersecurity', label: 'Cyber', icon: Shield },
-      { id: 'contact', label: 'Contatti', icon: Mail },
     ]
   };
 
