@@ -11,19 +11,19 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-white/5 py-12 px-6 bg-[#0a0a0a]">
+    <footer className="border-t border-border-subtle py-12 px-6 bg-[#0a0a0a]">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
-          <h3 className="text-base font-medium text-white mb-1">Francesco Nazzaro</h3>
-          <p className="text-slate-500 text-xs">© 2026. {text[lang]}</p>
+          <h3 className="text-base font-medium text-text-primary mb-1">Francesco Nazzaro</h3>
+          <p className="text-text-muted text-xs">© 2026. {text[lang]}</p>
         </div>
         
         <div className="flex gap-6">
-          <a href="mailto:nazzaro2005@gmail.com" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="mailto:nazzaro2005@gmail.com" className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2 text-sm">
             <Mail size={16} />
             nazzaro2005@gmail.com
           </a>
-          <a href="https://nazzaro05.github.io" target="_blank" rel="noreferrer" className="text-slate-400 hover:text-white transition-colors flex items-center gap-2 text-sm">
+          <a href="https://nazzaro05.github.io" target="_blank" rel="noreferrer" className="text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2 text-sm">
             <Github size={16} />
             GitHub
           </a>

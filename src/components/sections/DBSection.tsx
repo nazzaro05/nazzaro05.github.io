@@ -53,8 +53,8 @@ const DBSection = () => {
           <Database size={14} />
           Data Architecture
         </div>
-        <h1 className="text-6xl md:text-8xl font-black text-white tracking-tighter mb-6">Database Systems</h1>
-        <p className="text-slate-500 max-w-2xl mx-auto text-lg font-medium">
+        <h1 className="text-6xl md:text-8xl font-black text-text-primary tracking-tighter mb-6">Database Systems</h1>
+        <p className="text-text-muted max-w-2xl mx-auto text-lg font-medium">
           From traditional relational models to high-performance vector stores for AI. 
           Explore the technologies that power modern data-driven applications.
         </p>
@@ -75,16 +75,16 @@ const DBSection = () => {
               </div>
               <div className="flex gap-2">
                 {type.examples.map(ex => (
-                  <span key={ex} className="px-3 py-1 rounded-lg bg-white/5 text-[10px] font-black text-slate-500 uppercase tracking-wider">
+                  <span key={ex} className="px-3 py-1 rounded-lg bg-bg-card text-[10px] font-black text-text-muted uppercase tracking-wider">
                     {ex}
                   </span>
                 ))}
               </div>
             </div>
-            <h3 className="text-3xl font-black text-white mb-4 tracking-tight">{type.title}</h3>
-            <p className="text-slate-400 mb-6 leading-relaxed font-medium">{type.desc}</p>
-            <div className="pt-6 border-t border-white/5">
-              <p className="text-xs text-slate-500 leading-relaxed italic">
+            <h3 className="text-3xl font-black text-text-primary mb-4 tracking-tight">{type.title}</h3>
+            <p className="text-text-secondary mb-6 leading-relaxed font-medium">{type.desc}</p>
+            <div className="pt-6 border-t border-border-subtle">
+              <p className="text-xs text-text-muted leading-relaxed italic">
                 {type.details}
               </p>
             </div>
@@ -94,14 +94,14 @@ const DBSection = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
         <div className="lg:col-span-2 glass-card p-10 bg-purple-500/[0.02]">
-          <h3 className="text-2xl font-black text-white mb-8 flex items-center gap-3">
+          <h3 className="text-2xl font-black text-text-primary mb-8 flex items-center gap-3">
             <Shield className="text-purple-400" />
             ACID vs. BASE
           </h3>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <div className="space-y-4">
               <h4 className="text-purple-400 font-black uppercase tracking-widest text-xs">ACID (SQL)</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 Atomicity, Consistency, Isolation, Durability. Guarantees that database transactions are processed reliably. If any part of a transaction fails, the entire transaction fails.
               </p>
               <ul className="space-y-2 text-xs text-slate-600">
@@ -112,7 +112,7 @@ const DBSection = () => {
             </div>
             <div className="space-y-4">
               <h4 className="text-emerald-400 font-black uppercase tracking-widest text-xs">BASE (NoSQL)</h4>
-              <p className="text-sm text-slate-500 leading-relaxed">
+              <p className="text-sm text-text-muted leading-relaxed">
                 Basically Available, Soft state, Eventual consistency. Prioritizes availability and scalability over immediate consistency. Data will eventually be consistent across all nodes.
               </p>
               <ul className="space-y-2 text-xs text-slate-600">
@@ -125,22 +125,22 @@ const DBSection = () => {
         </div>
 
         <div className="glass-card p-10 bg-sky-500/[0.02]">
-          <h3 className="text-2xl font-black text-white mb-6 flex items-center gap-3">
+          <h3 className="text-2xl font-black text-text-primary mb-6 flex items-center gap-3">
             <Globe className="text-sky-400" />
             Security
           </h3>
           <div className="space-y-6">
-            <div className="p-4 bg-white/5 rounded-2xl">
-              <h4 className="text-white text-sm font-bold mb-2">Encryption at Rest</h4>
-              <p className="text-xs text-slate-500">Protecting data stored on disks using AES-256 or similar standards.</p>
+            <div className="p-4 bg-bg-card rounded-2xl">
+              <h4 className="text-text-primary text-sm font-bold mb-2">Encryption at Rest</h4>
+              <p className="text-xs text-text-muted">Protecting data stored on disks using AES-256 or similar standards.</p>
             </div>
-            <div className="p-4 bg-white/5 rounded-2xl">
-              <h4 className="text-white text-sm font-bold mb-2">RBAC</h4>
-              <p className="text-xs text-slate-500">Role-Based Access Control ensures users only see what they need.</p>
+            <div className="p-4 bg-bg-card rounded-2xl">
+              <h4 className="text-text-primary text-sm font-bold mb-2">RBAC</h4>
+              <p className="text-xs text-text-muted">Role-Based Access Control ensures users only see what they need.</p>
             </div>
-            <div className="p-4 bg-white/5 rounded-2xl">
-              <h4 className="text-white text-sm font-bold mb-2">Audit Logs</h4>
-              <p className="text-xs text-slate-500">Tracking every query and modification for compliance and security.</p>
+            <div className="p-4 bg-bg-card rounded-2xl">
+              <h4 className="text-text-primary text-sm font-bold mb-2">Audit Logs</h4>
+              <p className="text-xs text-text-muted">Tracking every query and modification for compliance and security.</p>
             </div>
           </div>
         </div>

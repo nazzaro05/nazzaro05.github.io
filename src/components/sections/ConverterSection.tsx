@@ -69,8 +69,8 @@ const ConverterSection = () => {
             <Sparkles size={14} />
             Smart Utility
           </div>
-          <h1 className="text-6xl md:text-7xl font-black text-white tracking-tighter mb-4">Numerical Converter</h1>
-          <p className="text-slate-500 max-w-xl mx-auto font-medium">
+          <h1 className="text-6xl md:text-7xl font-black text-text-primary tracking-tighter mb-4">Numerical Converter</h1>
+          <p className="text-text-muted max-w-xl mx-auto font-medium">
             A sleek, high-precision tool for seamless base transformations. 
             Convert between standard and custom numerical systems instantly.
           </p>
@@ -81,18 +81,18 @@ const ConverterSection = () => {
             <div className="glass-card p-10 bg-white/[0.01]">
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <label className="block text-xs font-black text-slate-500 uppercase tracking-[0.2em]">Input Value</label>
+                  <label className="block text-xs font-black text-text-muted uppercase tracking-[0.2em]">Input Value</label>
                   <input 
                     type="text" 
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
                     placeholder="Enter a number..."
-                    className="w-full bg-slate-900/50 border border-white/5 rounded-3xl p-6 text-white font-mono text-2xl focus:outline-none focus:border-sky-500/30 transition-all placeholder:text-slate-800"
+                    className="w-full bg-slate-900/50 border border-border-subtle rounded-3xl p-6 text-text-primary font-mono text-2xl focus:outline-none focus:border-sky-500/30 transition-all placeholder:text-slate-800"
                   />
                 </div>
 
                 <div className="space-y-4">
-                  <label className="block text-xs font-black text-slate-500 uppercase tracking-[0.2em]">Source Base</label>
+                  <label className="block text-xs font-black text-text-muted uppercase tracking-[0.2em]">Source Base</label>
                   <div className="grid grid-cols-3 sm:grid-cols-5 gap-3">
                     {[
                       { val: '2', label: 'BIN' },
@@ -106,8 +106,8 @@ const ConverterSection = () => {
                         onClick={() => setBase(b.val)}
                         className={`py-4 rounded-2xl font-black text-xs transition-all border ${
                           base === b.val 
-                            ? 'bg-sky-500 text-white border-sky-400 shadow-[0_0_20px_rgba(14,165,233,0.3)]' 
-                            : 'bg-white/5 text-slate-500 border-white/5 hover:bg-white/10 hover:text-white'
+                            ? 'bg-sky-500 text-text-primary border-sky-400 shadow-[0_0_20px_rgba(14,165,233,0.3)]' 
+                            : 'bg-bg-card text-text-muted border-border-subtle hover:bg-white/10 hover:text-text-primary'
                         }`}
                       >
                         {b.label}
@@ -130,12 +130,12 @@ const ConverterSection = () => {
                   <div className="glass-card p-6 flex flex-col gap-4 hover:border-sky-500/20 transition-all">
                     <div className="flex justify-between items-center">
                       <div className="flex items-center gap-3">
-                        <span className="text-[10px] font-black text-slate-500 uppercase tracking-widest">{res.label}</span>
-                        <span className="px-2 py-0.5 rounded-md bg-white/5 text-[10px] text-slate-600 font-bold">BASE {res.base}</span>
+                        <span className="text-[10px] font-black text-text-muted uppercase tracking-widest">{res.label}</span>
+                        <span className="px-2 py-0.5 rounded-md bg-bg-card text-[10px] text-slate-600 font-bold">BASE {res.base}</span>
                       </div>
                       <button 
                         onClick={() => setExpandedInfo(expandedInfo === res.label ? null : res.label)}
-                        className={`p-2 rounded-xl transition-all ${expandedInfo === res.label ? 'bg-sky-500/10 text-sky-400' : 'text-slate-600 hover:text-white hover:bg-white/5'}`}
+                        className={`p-2 rounded-xl transition-all ${expandedInfo === res.label ? 'bg-sky-500/10 text-sky-400' : 'text-slate-600 hover:text-text-primary hover:bg-bg-card'}`}
                       >
                         <Info size={16} />
                       </button>
@@ -152,10 +152,10 @@ const ConverterSection = () => {
                           exit={{ height: 0, opacity: 0 }}
                           className="overflow-hidden"
                         >
-                          <div className="pt-4 mt-4 border-t border-white/5 space-y-3">
-                            <h4 className="text-sm font-bold text-white">{explanations[res.label].title}</h4>
-                            <p className="text-xs text-slate-500 leading-relaxed">{explanations[res.label].content}</p>
-                            <div className="p-3 bg-black/20 rounded-xl font-mono text-[10px] text-sky-500/70">
+                          <div className="pt-4 mt-4 border-t border-border-subtle space-y-3">
+                            <h4 className="text-sm font-bold text-text-primary">{explanations[res.label].title}</h4>
+                            <p className="text-xs text-text-muted leading-relaxed">{explanations[res.label].content}</p>
+                            <div className="p-3 bg-text-primary/20 rounded-xl font-mono text-[10px] text-sky-500/70">
                               {explanations[res.label].example}
                             </div>
                           </div>
@@ -170,13 +170,13 @@ const ConverterSection = () => {
 
           <div className="lg:col-span-5 space-y-8">
             <div className="glass-card p-10 bg-sky-500/[0.02] border-sky-500/10">
-              <h3 className="text-xl font-black text-white mb-8 flex items-center gap-3">
+              <h3 className="text-xl font-black text-text-primary mb-8 flex items-center gap-3">
                 <Sparkles size={20} className="text-sky-400" />
                 Quick Guide
               </h3>
               <div className="space-y-8">
                 <div className="space-y-4">
-                  <h4 className="text-xs font-black text-slate-400 uppercase tracking-widest">Valid Ranges</h4>
+                  <h4 className="text-xs font-black text-text-secondary uppercase tracking-widest">Valid Ranges</h4>
                   <ul className="space-y-3">
                     {[
                       { label: 'Binary', range: '0 - 1' },
@@ -186,15 +186,15 @@ const ConverterSection = () => {
                       { label: 'Hex', range: '0 - 9, A - F' },
                     ].map(item => (
                       <li key={item.label} className="flex justify-between items-center text-xs">
-                        <span className="text-slate-500 font-bold">{item.label}</span>
+                        <span className="text-text-muted font-bold">{item.label}</span>
                         <span className="font-mono text-sky-500/60">{item.range}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
 
-                <div className="p-6 bg-white/[0.02] rounded-3xl border border-white/5">
-                  <p className="text-xs text-slate-500 leading-relaxed font-medium">
+                <div className="p-6 bg-bg-card rounded-3xl border border-border-subtle">
+                  <p className="text-xs text-text-muted leading-relaxed font-medium">
                     Pro tip: Click the <Info size={12} className="inline mx-1" /> icon on any result card to see the manual conversion logic and examples.
                   </p>
                 </div>
@@ -202,8 +202,8 @@ const ConverterSection = () => {
             </div>
 
             <div className="glass-card p-10 bg-emerald-500/[0.02] border-emerald-500/10">
-              <h3 className="text-xl font-black text-white mb-4">Did you know?</h3>
-              <p className="text-sm text-slate-500 leading-relaxed font-medium">
+              <h3 className="text-xl font-black text-text-primary mb-4">Did you know?</h3>
+              <p className="text-sm text-text-muted leading-relaxed font-medium">
                 Base 5 (Quinary) is one of the oldest counting systems, as it corresponds to the number of fingers on one hand. 
                 It was used by the Gumatj people of Australia and in some ancient Mesoamerican cultures.
               </p>

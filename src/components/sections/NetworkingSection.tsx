@@ -29,27 +29,27 @@ const NetworkingSection = () => {
           <div className="p-4 bg-sky-500/10 rounded-2xl">
             <Globe className="text-sky-400" size={36} />
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">Networking & Infrastructure</h1>
+          <h1 className="text-5xl md:text-6xl font-black text-text-primary tracking-tighter">Networking & Infrastructure</h1>
         </div>
         
-        <p className="text-slate-400 text-xl leading-relaxed max-w-3xl font-medium">
+        <p className="text-text-secondary text-xl leading-relaxed max-w-3xl font-medium">
           Understanding the invisible threads that connect the world. From the physical layer of fiber optics 
           to the complex routing protocols that power the global internet.
         </p>
       </motion.div>
 
       <section className="space-y-12">
-        <h2 className="text-4xl font-bold text-white flex items-center gap-4 tracking-tight">
+        <h2 className="text-4xl font-bold text-text-primary flex items-center gap-4 tracking-tight">
           <Layers size={32} className="text-sky-400" />
           The OSI Model
         </h2>
         <div className="space-y-3">
           {osiLayers.map((l) => (
-            <div key={l.layer} className={`${l.color} p-6 rounded-2xl border border-white/5 flex items-center gap-8 group hover:border-sky-500/30 transition-all`}>
-              <span className="text-3xl font-black text-white/20 group-hover:text-sky-400 transition-colors w-12">{l.layer}</span>
+            <div key={l.layer} className={`${l.color} p-6 rounded-2xl border border-border-subtle flex items-center gap-8 group hover:border-sky-500/30 transition-all`}>
+              <span className="text-3xl font-black text-text-primary/20 group-hover:text-sky-400 transition-colors w-12">{l.layer}</span>
               <div>
-                <h4 className="text-white font-bold text-lg">{l.name}</h4>
-                <p className="text-slate-500 text-sm">{l.desc}</p>
+                <h4 className="text-text-primary font-bold text-lg">{l.name}</h4>
+                <p className="text-text-muted text-sm">{l.desc}</p>
               </div>
             </div>
           ))}
@@ -57,16 +57,16 @@ const NetworkingSection = () => {
       </section>
 
       <section className="space-y-12">
-        <h2 className="text-4xl font-bold text-white flex items-center gap-4 tracking-tight">
+        <h2 className="text-4xl font-bold text-text-primary flex items-center gap-4 tracking-tight">
           <Zap size={32} className="text-sky-400" />
           Core Protocols
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {protocols.map((p, i) => (
-            <div key={i} className="glass-card p-8 hover:bg-white/[0.03] transition-all border-white/5">
+            <div key={i} className="glass-card p-8 hover:bg-bg-card transition-all border-border-subtle">
               <p.icon className="text-sky-400 mb-6" size={28} />
-              <h4 className="font-bold text-white text-lg mb-3 tracking-tight">{p.name}</h4>
-              <p className="text-slate-500 text-xs leading-relaxed font-medium">{p.desc}</p>
+              <h4 className="font-bold text-text-primary text-lg mb-3 tracking-tight">{p.name}</h4>
+              <p className="text-text-muted text-xs leading-relaxed font-medium">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -77,7 +77,7 @@ const NetworkingSection = () => {
           <Server size={32} />
           The Modern Web Stack
         </h2>
-        <p className="text-slate-400 leading-relaxed text-lg font-medium">
+        <p className="text-text-secondary leading-relaxed text-lg font-medium">
           Modern infrastructure relies on virtualization, containerization (Docker/K8s), and cloud-native 
           architectures. The shift from physical servers to serverless functions and edge computing 
           has revolutionized how we build and deploy global applications.

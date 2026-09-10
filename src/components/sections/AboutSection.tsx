@@ -58,15 +58,15 @@ const AboutSection = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="pt-32 px-6 max-w-4xl mx-auto pb-20 space-y-16"
     >
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
-        <p className="text-slate-400 text-lg leading-relaxed">
+        <h1 className="text-4xl md:text-5xl font-semibold text-text-primary mb-6">{content.title}</h1>
+        <p className="text-text-secondary text-lg leading-relaxed">
           {content.bio}
         </p>
       </div>
@@ -77,41 +77,41 @@ const AboutSection = () => {
 
       {/* Education & Certs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <div className="flex items-center gap-3 mb-6">
             <GraduationCap className="text-sky-400" size={24} />
-            <h3 className="text-xl font-semibold text-white">{content.education}</h3>
+            <h3 className="text-xl font-semibold text-text-primary">{content.education}</h3>
           </div>
           <ul className="space-y-4">
             <li>
-              <p className="text-white font-medium">{content.diplomaTitle}</p>
-              <p className="text-slate-500 text-sm mt-1">ITT Guido Dorso (2019-2024)</p>
+              <p className="text-text-primary font-medium">{content.diplomaTitle}</p>
+              <p className="text-text-muted text-sm mt-1">ITT Guido Dorso (2019-2024)</p>
               <p className="text-emerald-400 text-sm font-medium mt-1">{content.grade}</p>
             </li>
           </ul>
         </div>
         
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <div className="flex items-center gap-3 mb-6">
             <Award className="text-sky-400" size={24} />
-            <h3 className="text-xl font-semibold text-white">{content.certs}</h3>
+            <h3 className="text-xl font-semibold text-text-primary">{content.certs}</h3>
           </div>
           <ul className="space-y-5">
             <li>
-              <p className="text-white font-medium text-sm">{content.cert1}</p>
-              <p className="text-slate-500 text-xs mt-1">{content.cert1Subtitle}</p>
+              <p className="text-text-primary font-medium text-sm">{content.cert1}</p>
+              <p className="text-text-muted text-xs mt-1">{content.cert1Subtitle}</p>
             </li>
             <li>
-              <p className="text-white font-medium text-sm">{content.cert2}</p>
-              <p className="text-slate-500 text-xs mt-1">Università degli Studi del Sannio (2026)</p>
+              <p className="text-text-primary font-medium text-sm">{content.cert2}</p>
+              <p className="text-text-muted text-xs mt-1">Università degli Studi del Sannio (2026)</p>
             </li>
             <li>
-              <p className="text-white font-medium text-sm">{content.cert3}</p>
-              <p className="text-slate-500 text-xs mt-1">Università degli Studi del Sannio (2026)</p>
+              <p className="text-text-primary font-medium text-sm">{content.cert3}</p>
+              <p className="text-text-muted text-xs mt-1">Università degli Studi del Sannio (2026)</p>
             </li>
             <li>
-              <p className="text-white font-medium text-sm">{content.cert4}</p>
-              <p className="text-slate-500 text-xs mt-1">ITT Guido Dorso (2024)</p>
+              <p className="text-text-primary font-medium text-sm">{content.cert4}</p>
+              <p className="text-text-muted text-xs mt-1">ITT Guido Dorso (2024)</p>
             </li>
           </ul>
         </div>
@@ -119,16 +119,16 @@ const AboutSection = () => {
 
       {/* Volunteering & Languages */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <div className="flex items-center gap-3 mb-6">
             <Heart className="text-red-400" size={24} />
-            <h3 className="text-xl font-semibold text-white">{content.volunteering}</h3>
+            <h3 className="text-xl font-semibold text-text-primary">{content.volunteering}</h3>
           </div>
           <ul className="space-y-4">
             <li>
-              <p className="text-white font-medium">Misericordia di Avellino</p>
-              <p className="text-slate-500 text-sm mb-2">{content.volSubtitle}</p>
-              <ul className="text-slate-400 text-sm space-y-1 ml-4 list-disc marker:text-red-500/50">
+              <p className="text-text-primary font-medium">Misericordia di Avellino</p>
+              <p className="text-text-muted text-sm mb-2">{content.volSubtitle}</p>
+              <ul className="text-text-secondary text-sm space-y-1 ml-4 list-disc marker:text-red-500/50">
                 <li>{content.certBLS}</li>
                 <li>{content.certSoc}</li>
               </ul>
@@ -136,19 +136,19 @@ const AboutSection = () => {
           </ul>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <div className="flex items-center gap-3 mb-6">
             <Languages className="text-emerald-400" size={24} />
-            <h3 className="text-xl font-semibold text-white">{content.languages}</h3>
+            <h3 className="text-xl font-semibold text-text-primary">{content.languages}</h3>
           </div>
           <ul className="space-y-4">
-            <li className="flex justify-between items-center border-b border-white/5 pb-3">
-              <span className="text-white font-medium">{content.italian}</span>
-              <span className="text-slate-400 text-sm">{content.native}</span>
+            <li className="flex justify-between items-center border-b border-border-subtle pb-3">
+              <span className="text-text-primary font-medium">{content.italian}</span>
+              <span className="text-text-secondary text-sm">{content.native}</span>
             </li>
             <li className="flex justify-between items-center">
-              <span className="text-white font-medium">{content.english}</span>
-              <span className="text-slate-400 text-sm px-2 py-1 bg-white/5 rounded-md">{content.b2}</span>
+              <span className="text-text-primary font-medium">{content.english}</span>
+              <span className="text-text-secondary text-sm px-2 py-1 bg-bg-card rounded-md">{content.b2}</span>
             </li>
           </ul>
         </div>

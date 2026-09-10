@@ -37,32 +37,32 @@ const CybersecuritySection = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="pt-32 px-6 max-w-5xl mx-auto pb-20 space-y-16"
     >
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
-        <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-semibold text-text-primary mb-6">{content.title}</h1>
+        <p className="text-text-secondary text-lg leading-relaxed max-w-3xl">
           {content.desc}
         </p>
       </div>
 
-      <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-10 relative overflow-hidden">
+      <div className="bg-bg-card border border-border-subtle rounded-2xl p-10 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-red-500/50" />
         <div className="flex flex-col md:flex-row items-start gap-8">
           <div className="p-5 bg-red-500/10 rounded-2xl shrink-0">
             <Wifi className="text-red-400" size={36} />
           </div>
           <div>
-            <h3 className="text-2xl font-semibold text-white mb-2">{content.projectTitle}</h3>
+            <h3 className="text-2xl font-semibold text-text-primary mb-2">{content.projectTitle}</h3>
             <h4 className="text-red-400 font-medium mb-5">{content.projectSubtitle}</h4>
-            <p className="text-slate-400 text-sm leading-relaxed mb-4">
+            <p className="text-text-secondary text-sm leading-relaxed mb-4">
               {content.projectDesc1}
             </p>
-            <p className="text-slate-400 text-sm leading-relaxed">
+            <p className="text-text-secondary text-sm leading-relaxed">
               {content.projectDesc2}
             </p>
           </div>
@@ -70,18 +70,18 @@ const CybersecuritySection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <Target className="text-emerald-400 mb-5" size={28} />
-          <h3 className="text-xl font-semibold text-white mb-3">{content.labTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <h3 className="text-xl font-semibold text-text-primary mb-3">{content.labTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed">
             {content.labDesc}
           </p>
         </div>
         
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
           <Crosshair className="text-sky-400 mb-5" size={28} />
-          <h3 className="text-xl font-semibold text-white mb-3">{content.foundationsTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <h3 className="text-xl font-semibold text-text-primary mb-3">{content.foundationsTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed">
             {content.foundationsDesc}
           </p>
         </div>

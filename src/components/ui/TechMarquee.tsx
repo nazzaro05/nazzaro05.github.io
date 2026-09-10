@@ -29,17 +29,17 @@ const TechMarquee = () => {
   ];
 
   return (
-    <div className="w-full relative py-12 overflow-hidden border-y border-white/5 bg-white/[0.01]">
+    <div className="w-full relative py-12 overflow-hidden border-y border-border-subtle bg-bg-card">
       {/* Left/Right fading masks */}
-      <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
-      <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 left-0 w-24 h-full bg-gradient-to-r from-bg-base to-transparent z-10 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-24 h-full bg-gradient-to-l from-bg-base to-transparent z-10 pointer-events-none" />
       
       <div className="flex animate-marquee min-w-max">
         {/* We duplicate the array to create a seamless infinite scroll loop */}
         {[...icons, ...icons].map((tech, idx) => (
           <div 
             key={idx} 
-            className="flex flex-col items-center justify-center mx-10 text-slate-500 hover:text-sky-400 transition-colors duration-300"
+            className="flex flex-col items-center justify-center mx-10 text-text-muted hover:text-sky-400 transition-colors duration-300"
           >
             <tech.Icon size={42} />
             <span className="text-xs mt-3 font-medium opacity-0 hover:opacity-100 transition-opacity absolute -bottom-5">

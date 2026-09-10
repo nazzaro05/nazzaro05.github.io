@@ -41,7 +41,7 @@ const LinuxSection = () => {
           <div className="p-4 bg-emerald-500/10 rounded-2xl">
             <Terminal className="text-emerald-400" size={36} />
           </div>
-          <h1 className="text-5xl md:text-6xl font-black text-white tracking-tighter">Linux & Unix</h1>
+          <h1 className="text-5xl md:text-6xl font-black text-text-primary tracking-tighter">Linux & Unix</h1>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
@@ -59,7 +59,7 @@ const LinuxSection = () => {
                 className={`w-full flex items-center gap-3 px-6 py-4 rounded-2xl font-bold transition-all ${
                   activeTab === tab.id 
                     ? 'bg-emerald-500/10 text-emerald-400 border border-emerald-500/20' 
-                    : 'text-slate-500 hover:text-white hover:bg-white/5'
+                    : 'text-text-muted hover:text-text-primary hover:bg-bg-card'
                 }`}
               >
                 <tab.icon size={20} />
@@ -73,25 +73,25 @@ const LinuxSection = () => {
             <div className="glass-card p-10 min-h-[600px]">
               {activeTab === 'intro' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
-                  <h2 className="text-4xl font-black text-white tracking-tight">What is Linux?</h2>
-                  <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                  <h2 className="text-4xl font-black text-text-primary tracking-tight">What is Linux?</h2>
+                  <p className="text-text-secondary text-lg leading-relaxed font-medium">
                     Linux is a family of open-source Unix-like operating systems based on the Linux kernel. 
                     It is the foundation of modern computing, powering everything from smartphones (Android) 
                     to the world's fastest supercomputers and the vast majority of the internet's servers.
                   </p>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="p-6 bg-white/[0.02] rounded-2xl border border-white/5">
+                    <div className="p-6 bg-bg-card rounded-2xl border border-border-subtle">
                       <h4 className="text-emerald-400 font-bold mb-2">Open Source</h4>
-                      <p className="text-sm text-slate-500">The source code is freely available for anyone to view, modify, and distribute.</p>
+                      <p className="text-sm text-text-muted">The source code is freely available for anyone to view, modify, and distribute.</p>
                     </div>
-                    <div className="p-6 bg-white/[0.02] rounded-2xl border border-white/5">
+                    <div className="p-6 bg-bg-card rounded-2xl border border-border-subtle">
                       <h4 className="text-emerald-400 font-bold mb-2">Multi-user</h4>
-                      <p className="text-sm text-slate-500">Multiple users can access system resources simultaneously with strict permission controls.</p>
+                      <p className="text-sm text-text-muted">Multiple users can access system resources simultaneously with strict permission controls.</p>
                     </div>
                   </div>
 
-                  <div className="pt-8 border-t border-white/5">
-                    <h3 className="text-2xl font-bold text-white mb-6">Why use Linux?</h3>
+                  <div className="pt-8 border-t border-border-subtle">
+                    <h3 className="text-2xl font-bold text-text-primary mb-6">Why use Linux?</h3>
                     <div className="space-y-4">
                       {[
                         { title: 'Security', desc: 'Granular permissions and rapid security patches make it highly resistant to malware.' },
@@ -104,8 +104,8 @@ const LinuxSection = () => {
                             <ChevronRight className="text-emerald-400" size={14} />
                           </div>
                           <div>
-                            <span className="text-white font-bold block">{benefit.title}</span>
-                            <span className="text-slate-500 text-sm">{benefit.desc}</span>
+                            <span className="text-text-primary font-bold block">{benefit.title}</span>
+                            <span className="text-text-muted text-sm">{benefit.desc}</span>
                           </div>
                         </div>
                       ))}
@@ -116,15 +116,15 @@ const LinuxSection = () => {
 
               {activeTab === 'history' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
-                  <h2 className="text-4xl font-black text-white tracking-tight">The Pioneers</h2>
+                  <h2 className="text-4xl font-black text-text-primary tracking-tight">The Pioneers</h2>
                   <div className="space-y-10">
                     <div className="flex flex-col md:flex-row gap-8 items-start">
                       <div className="w-24 h-24 bg-emerald-500/10 rounded-full flex items-center justify-center shrink-0">
                         <span className="text-3xl font-black text-emerald-400">LT</span>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Linus Torvalds</h3>
-                        <p className="text-slate-400 leading-relaxed">
+                        <h3 className="text-2xl font-bold text-text-primary mb-2">Linus Torvalds</h3>
+                        <p className="text-text-secondary leading-relaxed">
                           In 1991, while a student at the University of Helsinki, Linus Torvalds began developing the Linux kernel 
                           as a free alternative to the Minix operating system. Today, he remains the lead developer of the kernel.
                         </p>
@@ -135,8 +135,8 @@ const LinuxSection = () => {
                         <span className="text-3xl font-black text-blue-400">UN</span>
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-white mb-2">Ken Thompson & Dennis Ritchie</h3>
-                        <p className="text-slate-400 leading-relaxed">
+                        <h3 className="text-2xl font-bold text-text-primary mb-2">Ken Thompson & Dennis Ritchie</h3>
+                        <p className="text-text-secondary leading-relaxed">
                           The creators of the original Unix at Bell Labs in the late 1960s. Their work on Unix and the C programming 
                           language laid the architectural foundation for nearly all modern operating systems, including Linux and macOS.
                         </p>
@@ -148,16 +148,16 @@ const LinuxSection = () => {
 
               {activeTab === 'architecture' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
-                  <h2 className="text-4xl font-black text-white tracking-tight">System Layers</h2>
+                  <h2 className="text-4xl font-black text-text-primary tracking-tight">System Layers</h2>
                   <div className="space-y-4">
                     {architectureLayers.map((layer, i) => (
-                      <div key={i} className={`${layer.color} p-6 rounded-2xl border border-white/10 flex items-start gap-6 group hover:border-emerald-500/30 transition-all`}>
-                        <div className="p-3 bg-white/5 rounded-xl text-emerald-400 group-hover:scale-110 transition-transform">
+                      <div key={i} className={`${layer.color} p-6 rounded-2xl border border-border-subtle flex items-start gap-6 group hover:border-emerald-500/30 transition-all`}>
+                        <div className="p-3 bg-bg-card rounded-xl text-emerald-400 group-hover:scale-110 transition-transform">
                           <layer.icon size={24} />
                         </div>
                         <div>
-                          <h4 className="text-white font-bold text-lg">{layer.title}</h4>
-                          <p className="text-white/60 text-sm leading-relaxed">{layer.desc}</p>
+                          <h4 className="text-text-primary font-bold text-lg">{layer.title}</h4>
+                          <p className="text-text-primary/60 text-sm leading-relaxed">{layer.desc}</p>
                         </div>
                       </div>
                     ))}
@@ -167,18 +167,18 @@ const LinuxSection = () => {
 
               {activeTab === 'commands' && (
                 <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="space-y-8">
-                  <h2 className="text-4xl font-black text-white tracking-tight">The Terminal</h2>
-                  <p className="text-slate-400 text-lg leading-relaxed font-medium">
+                  <h2 className="text-4xl font-black text-text-primary tracking-tight">The Terminal</h2>
+                  <p className="text-text-secondary text-lg leading-relaxed font-medium">
                     The command line is the most powerful tool in a Linux user's arsenal. 
                     Beyond simple commands, <strong>Shell Scripting</strong> allows you to automate complex tasks, 
                     manage system configurations, and process large amounts of data with ease.
                   </p>
-                  <div className="bg-black/40 rounded-2xl border border-white/5 overflow-hidden">
-                    <div className="bg-white/5 px-4 py-2 flex items-center gap-2 border-b border-white/5">
+                  <div className="bg-text-primary/40 rounded-2xl border border-border-subtle overflow-hidden">
+                    <div className="bg-bg-card px-4 py-2 flex items-center gap-2 border-b border-border-subtle">
                       <div className="w-3 h-3 rounded-full bg-red-500/50" />
                       <div className="w-3 h-3 rounded-full bg-yellow-500/50" />
                       <div className="w-3 h-3 rounded-full bg-green-500/50" />
-                      <span className="text-[10px] text-slate-500 font-mono ml-2">bash — 80x24</span>
+                      <span className="text-[10px] text-text-muted font-mono ml-2">bash — 80x24</span>
                     </div>
                     <div className="p-6 font-mono text-sm space-y-4">
                       {commands.map((c, i) => (
@@ -187,7 +187,7 @@ const LinuxSection = () => {
                             <span className="text-emerald-400 font-bold">$ {c.cmd}</span>
                             <span className="text-slate-600">— {c.desc}</span>
                           </div>
-                          <div className="hidden group-hover:block mt-1 text-slate-500 pl-5 italic">
+                          <div className="hidden group-hover:block mt-1 text-text-muted pl-5 italic">
                             Example: {c.example}
                           </div>
                         </div>
@@ -202,7 +202,7 @@ const LinuxSection = () => {
 
         {/* Interactive Distro Section */}
         <div className="mt-20">
-          <h2 className="text-3xl font-black text-white mb-10 tracking-tight">Popular Distributions</h2>
+          <h2 className="text-3xl font-black text-text-primary mb-10 tracking-tight">Popular Distributions</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               { name: 'Ubuntu', desc: 'The most popular desktop Linux, known for ease of use.', color: 'border-orange-500/30' },
@@ -210,8 +210,8 @@ const LinuxSection = () => {
               { name: 'Arch Linux', desc: 'A lightweight and flexible distro for advanced users.', color: 'border-blue-500/30' },
             ].map((distro, i) => (
               <div key={i} className={`glass-card p-8 border-t-4 ${distro.color} hover:translate-y-[-4px] transition-all`}>
-                <h4 className="text-xl font-bold text-white mb-3">{distro.name}</h4>
-                <p className="text-sm text-slate-500 leading-relaxed">{distro.desc}</p>
+                <h4 className="text-xl font-bold text-text-primary mb-3">{distro.name}</h4>
+                <p className="text-sm text-text-muted leading-relaxed">{distro.desc}</p>
               </div>
             ))}
           </div>

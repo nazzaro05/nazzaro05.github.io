@@ -27,35 +27,35 @@ const HomeSection = () => {
   return (
     <div className="pt-32 px-6 max-w-4xl mx-auto pb-20 min-h-[85vh] flex flex-col justify-center">
       <motion.div
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 50 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-50px" }}
-        transition={{ duration: 0.6 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
         className="space-y-6"
       >
-        <h1 className="text-5xl md:text-7xl font-semibold text-white tracking-tight">
+        <h1 className="text-5xl md:text-7xl font-semibold text-text-primary tracking-tight">
           Francesco Nazzaro
         </h1>
         
-        <h2 className="text-xl md:text-2xl text-slate-400 font-normal tracking-tight">
+        <h2 className="text-xl md:text-2xl text-text-secondary font-normal tracking-tight">
           {content.role}
         </h2>
         
-        <p className="text-slate-400 text-base md:text-lg max-w-2xl leading-relaxed pt-4">
+        <p className="text-text-secondary text-base md:text-lg max-w-2xl leading-relaxed pt-4">
           {content.desc}
         </p>
         
         <div className="flex flex-wrap gap-4 pt-8">
           <button 
             onClick={() => document.getElementById('infrastructure')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="px-6 py-3 bg-white text-black hover:bg-slate-200 font-medium rounded-xl transition-all flex items-center gap-2 text-sm"
+            className="px-6 py-3 bg-text-primary text-bg-base hover:bg-text-secondary font-medium rounded-xl transition-all flex items-center gap-2 text-sm"
           >
             {content.explore} <ArrowRight size={16} />
           </button>
           
           <a 
             href="mailto:nazzaro2005@gmail.com" 
-            className="px-6 py-3 bg-white/[0.03] hover:bg-white/[0.08] text-white font-medium rounded-xl transition-all flex items-center gap-2 border border-white/10 text-sm"
+            className="px-6 py-3 bg-bg-card hover:bg-bg-card-hover text-text-primary font-medium rounded-xl transition-all flex items-center gap-2 border border-border-subtle text-sm"
           >
             <Mail size={16} /> {content.contact}
           </a>

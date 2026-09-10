@@ -13,6 +13,8 @@ import BackToTop from './components/ui/BackToTop';
 import SectionDivider from './components/ui/SectionDivider';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 
+import { ThemeProvider } from './contexts/ThemeContext';
+
 const AppContent = () => {
   const [activeSection, setActiveSection] = useState<Section>('home');
   const { lang } = useLanguage();
@@ -59,7 +61,7 @@ const AppContent = () => {
   }, [activeSection, lang]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-slate-200 selection:bg-sky-500/30 selection:text-white font-sans">
+    <div className="min-h-screen bg-[#0a0a0a] text-text-primary selection:bg-sky-500/30 selection:text-text-primary font-sans">
       <Navbar activeSection={activeSection} />
       
       <main className="flex flex-col">
@@ -100,8 +102,10 @@ const AppContent = () => {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <AppContent />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppContent />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

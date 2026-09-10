@@ -39,28 +39,28 @@ const DevelopmentSection = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="pt-32 px-6 max-w-5xl mx-auto pb-20 space-y-16"
     >
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
-        <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-semibold text-text-primary mb-6">{content.title}</h1>
+        <p className="text-text-secondary text-lg leading-relaxed max-w-3xl">
           {content.desc}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <BookOpen className="text-indigo-400 mb-6" size={32} />
-          <h3 className="text-2xl font-semibold text-white mb-4">{content.studyTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          <h3 className="text-2xl font-semibold text-text-primary mb-4">{content.studyTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.studyDesc}
           </p>
-          <ul className="space-y-3 text-sm text-slate-300">
+          <ul className="space-y-3 text-sm text-text-secondary">
             <li className="flex items-center gap-3">
               <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" /> 
               {content.subj1}
@@ -76,19 +76,19 @@ const DevelopmentSection = () => {
           </ul>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-amber-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
+          <div className="absolute top-0 left-0 w-full h-1 bg-bg-basember-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Layers className="text-amber-400 mb-6" size={32} />
-          <h3 className="text-2xl font-semibold text-white mb-4">{content.stackTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          <h3 className="text-2xl font-semibold text-text-primary mb-4">{content.stackTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.stackDesc}
           </p>
           
-          <div className="bg-amber-500/5 p-5 rounded-xl border border-amber-500/10 mt-6">
+          <div className="bg-bg-basember-500/5 p-5 rounded-xl border border-amber-500/10 mt-6">
             <h4 className="text-amber-400 text-xs font-semibold uppercase mb-3 flex items-center gap-2">
               <Zap size={14}/> {content.deployTitle}
             </h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-text-secondary leading-relaxed">
               {content.deployDesc}
             </p>
           </div>

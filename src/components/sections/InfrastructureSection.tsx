@@ -49,80 +49,80 @@ const InfrastructureSection = () => {
 
   return (
     <motion.div 
-      initial={{ opacity: 0, y: 30 }}
+      initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
-      transition={{ duration: 0.6 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
       className="pt-32 px-6 max-w-5xl mx-auto pb-20 space-y-16"
     >
       <div>
-        <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
-        <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
+        <h1 className="text-4xl md:text-5xl font-semibold text-text-primary mb-6">{content.title}</h1>
+        <p className="text-text-secondary text-lg leading-relaxed max-w-3xl">
           {content.desc}
         </p>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-sky-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Server className="text-sky-400 mb-6" size={32} />
-          <h3 className="text-xl font-semibold text-white mb-3">{content.containerTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          <h3 className="text-xl font-semibold text-text-primary mb-3">{content.containerTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.containerDesc}
           </p>
           <div className="bg-sky-500/5 p-4 rounded-xl border border-sky-500/10">
             <h4 className="text-sky-400 text-xs font-semibold uppercase mb-2 flex items-center gap-2">
               <ShieldAlert size={14}/> {content.securityTitle}
             </h4>
-            <p className="text-xs text-slate-400 leading-relaxed">
+            <p className="text-xs text-text-secondary leading-relaxed">
               {content.securityDesc}
             </p>
           </div>
         </div>
 
-        <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Network className="text-emerald-400 mb-6" size={32} />
-          <h3 className="text-xl font-semibold text-white mb-3">{content.proxyTitle}</h3>
-          <p className="text-slate-400 text-sm leading-relaxed mb-6">
+          <h3 className="text-xl font-semibold text-text-primary mb-3">{content.proxyTitle}</h3>
+          <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.proxyDesc1}
           </p>
-          <p className="text-slate-400 text-sm leading-relaxed">
+          <p className="text-text-secondary text-sm leading-relaxed">
             {content.proxyDesc2}
           </p>
         </div>
       </div>
 
-      <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-10">
-        <div className="flex items-center gap-4 mb-8 border-b border-white/5 pb-6">
+      <div className="bg-bg-card border border-border-subtle rounded-2xl p-10">
+        <div className="flex items-center gap-4 mb-8 border-b border-border-subtle pb-6">
           <Terminal className="text-purple-400" size={32} />
-          <h2 className="text-2xl font-semibold text-white">{content.linuxTitle}</h2>
+          <h2 className="text-2xl font-semibold text-text-primary">{content.linuxTitle}</h2>
         </div>
         
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div className="space-y-3">
-            <h4 className="text-white font-medium flex items-center gap-2">
-              <Terminal size={16} className="text-slate-500"/> {content.shellTitle}
+            <h4 className="text-text-primary font-medium flex items-center gap-2">
+              <Terminal size={16} className="text-text-muted"/> {content.shellTitle}
             </h4>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-text-secondary leading-relaxed">
               {content.shellDesc}
             </p>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-white font-medium flex items-center gap-2">
-              <Cpu size={16} className="text-slate-500"/> {content.hwTitle}
+            <h4 className="text-text-primary font-medium flex items-center gap-2">
+              <Cpu size={16} className="text-text-muted"/> {content.hwTitle}
             </h4>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-text-secondary leading-relaxed">
               {content.hwDesc}
             </p>
           </div>
           
           <div className="space-y-3">
-            <h4 className="text-white font-medium flex items-center gap-2">
-              <HardDrive size={16} className="text-slate-500"/> {content.fsTitle}
+            <h4 className="text-text-primary font-medium flex items-center gap-2">
+              <HardDrive size={16} className="text-text-muted"/> {content.fsTitle}
             </h4>
-            <p className="text-sm text-slate-400 leading-relaxed">
+            <p className="text-sm text-text-secondary leading-relaxed">
               {content.fsDesc}
             </p>
           </div>
