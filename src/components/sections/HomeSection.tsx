@@ -4,11 +4,7 @@ import { Section } from '../../types';
 import { ArrowRight, Mail } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
 
-interface HomeSectionProps {
-  setActiveSection: (s: Section) => void;
-}
-
-const HomeSection = ({ setActiveSection }: HomeSectionProps) => {
+const HomeSection = () => {
   const { lang } = useLanguage();
 
   const t = {
@@ -31,8 +27,10 @@ const HomeSection = ({ setActiveSection }: HomeSectionProps) => {
   return (
     <div className="pt-32 px-6 max-w-4xl mx-auto pb-20 min-h-[85vh] flex flex-col justify-center">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6 }}
         className="space-y-6"
       >
         <h1 className="text-5xl md:text-7xl font-semibold text-white tracking-tight">
@@ -49,7 +47,7 @@ const HomeSection = ({ setActiveSection }: HomeSectionProps) => {
         
         <div className="flex flex-wrap gap-4 pt-8">
           <button 
-            onClick={() => setActiveSection('infrastructure')} 
+            onClick={() => document.getElementById('infrastructure')?.scrollIntoView({ behavior: 'smooth' })} 
             className="px-6 py-3 bg-white text-black hover:bg-slate-200 font-medium rounded-xl transition-all flex items-center gap-2 text-sm"
           >
             {content.explore} <ArrowRight size={16} />

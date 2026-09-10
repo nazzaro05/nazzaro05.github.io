@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Home, User, Server, Code, Shield, Menu, X, Globe } from 'lucide-react';
+import { Home, User, Server, Code, Shield, Menu, X, Globe, Mail, Terminal } from 'lucide-react';
 import { Section } from '../../types';
 import { useLanguage } from '../../contexts/LanguageContext';
 
 interface NavbarProps {
   activeSection: Section;
-  setActiveSection: (s: Section) => void;
 }
 
-const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
+const Navbar = ({ activeSection }: NavbarProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const { lang, toggleLanguage } = useLanguage();
+
+  const handleNavClick = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    setIsOpen(false);
+  };
 
   const navItems = {
     en: [
@@ -20,6 +24,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       { id: 'infrastructure', label: 'Infrastructure', icon: Server },
       { id: 'development', label: 'Web Apps', icon: Code },
       { id: 'cybersecurity', label: 'Cyber', icon: Shield },
+      { id: 'contact', label: 'Contact', icon: Mail },
     ],
     it: [
       { id: 'home', label: 'Home', icon: Home },
@@ -27,6 +32,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
       { id: 'infrastructure', label: 'Infrastruttura', icon: Server },
       { id: 'development', label: 'Web App', icon: Code },
       { id: 'cybersecurity', label: 'Cyber', icon: Shield },
+      { id: 'contact', label: 'Contatti', icon: Mail },
     ]
   };
 
@@ -36,9 +42,10 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
     <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-white/5">
       <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
         <div 
-          className="text-lg font-medium tracking-tight cursor-pointer flex items-center text-white hover:text-sky-400 transition-colors"
-          onClick={() => setActiveSection('home')}
+          className="text-lg font-medium tracking-tight cursor-pointer flex items-center gap-2 text-white hover:text-sky-400 transition-colors"
+          onClick={() => handleNavClick('home')}
         >
+          <Terminal size={22} className="text-sky-400" />
           F. Nazzaro
         </div>
 
@@ -47,7 +54,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
           {items.map((item) => (
             <button
               key={item.id}
-              onClick={() => setActiveSection(item.id as Section)}
+              onClick={() => handleNavClick(item.id)}
               className={`text-sm font-medium transition-colors ${
                 activeSection === item.id ? 'text-sky-400' : 'text-slate-400 hover:text-white'
               }`}
@@ -94,10 +101,7 @@ const Navbar = ({ activeSection, setActiveSection }: NavbarProps) => {
               {items.map((item) => (
                 <button
                   key={item.id}
-                  onClick={() => {
-                    setActiveSection(item.id as Section);
-                    setIsOpen(false);
-                  }}
+                  onClick={() => handleNavClick(item.id)}
                   className={`flex items-center gap-3 text-sm font-medium transition-colors ${
                     activeSection === item.id ? 'text-sky-400' : 'text-slate-400'
                   }`}

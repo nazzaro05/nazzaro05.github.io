@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { GraduationCap, Award, Heart, Languages } from 'lucide-react';
 import { useLanguage } from '../../contexts/LanguageContext';
+import TechMarquee from '../ui/TechMarquee';
 
 const AboutSection = () => {
   const { lang } = useLanguage();
@@ -9,7 +10,7 @@ const AboutSection = () => {
   const t = {
     en: {
       title: 'About Me',
-      bio: 'Born in 2005, I have always been fascinated by how technology connects people and systems. I recently graduated with top marks in IT and Telecommunications, and I am continuously expanding my skillset across systems administration, web development, and emergency medical response.',
+      bio: 'Born in 2005, I have always been fascinated by how technology connects people and systems. I recently graduated with top marks in IT and Telecommunications, and I am continuously expanding my skillset across systems administration and web development.',
       education: 'Education',
       diplomaTitle: 'Diploma in Informatica e Telecomunicazioni',
       grade: 'Grade: 100/100',
@@ -31,7 +32,7 @@ const AboutSection = () => {
     },
     it: {
       title: 'Chi Sono',
-      bio: 'Nato nel 2005, sono sempre stato affascinato da come la tecnologia connette persone e sistemi. Mi sono recentemente diplomato con il massimo dei voti in Informatica e Telecomunicazioni, e sto espandendo continuamente le mie competenze in amministrazione di sistema, sviluppo web e primo soccorso.',
+      bio: 'Nato nel 2005, sono sempre stato affascinato da come la tecnologia connette persone e sistemi. Mi sono recentemente diplomato con il massimo dei voti in Informatica e Telecomunicazioni, e sto espandendo continuamente le mie competenze in amministrazione di sistema e sviluppo web.',
       education: 'Istruzione',
       diplomaTitle: 'Diploma in Informatica e Telecomunicazioni',
       grade: 'Voto: 100/100',
@@ -56,13 +57,23 @@ const AboutSection = () => {
   const content = t[lang];
 
   return (
-    <div className="pt-32 px-6 max-w-4xl mx-auto pb-20 space-y-16">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+      className="pt-32 px-6 max-w-4xl mx-auto pb-20 space-y-16"
+    >
+      <div>
         <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
         <p className="text-slate-400 text-lg leading-relaxed">
           {content.bio}
         </p>
-      </motion.div>
+      </div>
+
+      <div className="-mx-6 md:-mx-12">
+        <TechMarquee />
+      </div>
 
       {/* Education & Certs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -142,7 +153,7 @@ const AboutSection = () => {
           </ul>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

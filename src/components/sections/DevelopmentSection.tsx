@@ -38,13 +38,19 @@ const DevelopmentSection = () => {
   const content = t[lang];
 
   return (
-    <div className="pt-32 px-6 max-w-5xl mx-auto pb-20 space-y-16">
-      <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
+    <motion.div 
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6 }}
+      className="pt-32 px-6 max-w-5xl mx-auto pb-20 space-y-16"
+    >
+      <div>
         <h1 className="text-4xl md:text-5xl font-semibold text-white mb-6">{content.title}</h1>
         <p className="text-slate-400 text-lg leading-relaxed max-w-3xl">
           {content.desc}
         </p>
-      </motion.div>
+      </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div className="bg-white/[0.02] border border-white/5 rounded-2xl p-8 relative overflow-hidden group">
@@ -88,7 +94,7 @@ const DevelopmentSection = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
