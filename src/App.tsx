@@ -61,7 +61,7 @@ const AppContent = () => {
   }, [activeSection, lang]);
 
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-text-primary selection:bg-sky-500/30 selection:text-text-primary font-sans">
+    <div className="min-h-screen bg-bg-base text-text-primary selection:bg-sky-500/30 selection:text-text-primary font-sans transition-colors duration-300">
       <Navbar activeSection={activeSection} />
       
       <main className="flex flex-col">

@@ -16,38 +16,45 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
   :root {
+    /* Light Mode - Crisp, High Contrast */
     --bg-base: #f8fafc;
-    --bg-nav: rgba(248, 250, 252, 0.9);
-    --bg-card: rgba(0, 0, 0, 0.03);
-    --bg-card-hover: rgba(0, 0, 0, 0.06);
+    --bg-nav: rgba(248, 250, 252, 0.88);
+    --bg-card: #ffffff;
+    --bg-card-hover: #f1f5f9;
     --text-primary: #0f172a;
-    --text-secondary: #475569;
+    --text-secondary: #334155;
     --text-muted: #64748b;
-    --border-subtle: rgba(0, 0, 0, 0.1);
+    --border-subtle: #e2e8f0;
   }
 
   .dark {
-    --bg-base: #0a0a0a;
-    --bg-nav: rgba(10, 10, 10, 0.9);
-    --bg-card: rgba(255, 255, 255, 0.02);
-    --bg-card-hover: rgba(255, 255, 255, 0.05);
+    /* Dark Mode - Redone properly: Deep Midnight Obsidian with solid readable cards and high-contrast typography */
+    --bg-base: #0b0f19;
+    --bg-nav: rgba(11, 15, 25, 0.88);
+    --bg-card: #131b2e;
+    --bg-card-hover: #1b2640;
     --text-primary: #ffffff;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --border-subtle: rgba(255, 255, 255, 0.05);
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --border-subtle: rgba(255, 255, 255, 0.12);
   }
 
   body {
-    @apply bg-bg-base text-text-secondary font-sans selection:bg-sky-500/30 selection:text-text-primary antialiased transition-colors duration-500;
+    @apply bg-bg-base text-text-secondary font-sans selection:bg-sky-500/30 selection:text-text-primary antialiased transition-colors duration-300;
     background-image: 
-      radial-gradient(circle at 20% 20%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
-      radial-gradient(circle at 80% 80%, rgba(217, 70, 239, 0.05) 0%, transparent 40%);
+      radial-gradient(circle at 15% 15%, rgba(14, 165, 233, 0.05) 0%, transparent 40%),
+      radial-gradient(circle at 85% 85%, rgba(217, 70, 239, 0.04) 0%, transparent 40%);
     background-attachment: fixed;
   }
 
   h1, h2, h3, h4 {
-    @apply text-text-primary tracking-tight transition-colors duration-500;
+    @apply text-text-primary tracking-tight transition-colors duration-300;
   }
 }
 

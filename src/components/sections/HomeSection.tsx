@@ -47,15 +47,23 @@ const HomeSection = () => {
         
         <div className="flex flex-wrap gap-4 pt-8">
           <button 
-            onClick={() => document.getElementById('infrastructure')?.scrollIntoView({ behavior: 'smooth' })} 
-            className="px-6 py-3 bg-text-primary text-bg-base hover:bg-text-secondary font-medium rounded-xl transition-all flex items-center gap-2 text-sm"
+            onClick={() => {
+              const el = document.getElementById('infrastructure');
+              if (el) {
+                const navHeight = 72;
+                const rect = el.getBoundingClientRect();
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                window.scrollTo({ top: rect.top + scrollTop - navHeight, behavior: 'smooth' });
+              }
+            }} 
+            className="px-6 py-3 bg-sky-500 hover:bg-sky-400 text-white font-semibold rounded-xl shadow-md shadow-sky-500/20 transition-all flex items-center gap-2 text-sm active:scale-95 cursor-pointer"
           >
             {content.explore} <ArrowRight size={16} />
           </button>
           
           <a 
             href="mailto:nazzaro2005@gmail.com" 
-            className="px-6 py-3 bg-bg-card hover:bg-bg-card-hover text-text-primary font-medium rounded-xl transition-all flex items-center gap-2 border border-border-subtle text-sm"
+            className="px-6 py-3 bg-bg-card hover:bg-bg-card-hover text-text-primary font-medium rounded-xl transition-all flex items-center gap-2 border border-border-subtle text-sm shadow-xs active:scale-95"
           >
             <Mail size={16} /> {content.contact}
           </a>

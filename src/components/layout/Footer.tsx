@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="border-t border-border-subtle py-12 px-6 bg-[#0a0a0a]">
+    <footer className="border-t border-border-subtle py-12 px-6 bg-bg-base transition-colors duration-300">
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
         <div className="text-center md:text-left">
           <h3 className="text-base font-medium text-text-primary mb-1">Francesco Nazzaro</h3>

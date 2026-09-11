@@ -77,14 +77,14 @@ const DevelopmentSection = () => {
         </div>
 
         <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-1 bg-bg-basember-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+          <div className="absolute top-0 left-0 w-full h-1 bg-amber-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Layers className="text-amber-400 mb-6" size={32} />
           <h3 className="text-2xl font-semibold text-text-primary mb-4">{content.stackTitle}</h3>
           <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.stackDesc}
           </p>
           
-          <div className="bg-bg-basember-500/5 p-5 rounded-xl border border-amber-500/10 mt-6">
+          <div className="bg-amber-500/10 p-5 rounded-xl border border-amber-500/20 mt-6">
             <h4 className="text-amber-400 text-xs font-semibold uppercase mb-3 flex items-center gap-2">
               <Zap size={14}/> {content.deployTitle}
             </h4>

@@ -15,8 +15,23 @@ const Navbar = ({ activeSection }: NavbarProps) => {
   const { theme, toggleTheme } = useTheme();
 
   const handleNavClick = (id: string) => {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
     setIsOpen(false);
+
+    // Give mobile touch events a brief moment to finish before scrolling
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const navHeight = 72; // Account for the fixed navbar height
+        const rect = element.getBoundingClientRect();
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        const targetY = rect.top + scrollTop - navHeight;
+
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: 'smooth'
+        });
+      }
+    }, 80);
   };
 
   const navItems = {
@@ -39,34 +54,38 @@ const Navbar = ({ activeSection }: NavbarProps) => {
   const items = navItems[lang];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-[#0a0a0a]/90 backdrop-blur-md border-b border-border-subtle">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-bg-nav backdrop-blur-md border-b border-border-subtle transition-colors duration-300">
       <div className="max-w-5xl mx-auto px-6 h-20 flex items-center justify-between">
         <div 
-          className="text-lg font-medium tracking-tight cursor-pointer flex items-center gap-2 text-text-primary hover:text-sky-400 transition-colors"
+          className="text-lg font-semibold tracking-tight cursor-pointer flex items-center gap-2 text-text-primary hover:text-sky-500 transition-colors"
           onClick={() => handleNavClick('home')}
         >
-          <Terminal size={22} className="text-sky-400" />
+          <Terminal size={22} className="text-sky-500" />
           F. Nazzaro
         </div>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {items.map((item) => (
-            <button
+            <a
               key={item.id}
-              onClick={() => handleNavClick(item.id)}
+              href={`#${item.id}`}
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick(item.id);
+              }}
               className={`text-sm font-medium transition-colors ${
-                activeSection === item.id ? 'text-sky-400' : 'text-text-secondary hover:text-text-primary'
+                activeSection === item.id ? 'text-sky-500 font-semibold' : 'text-text-secondary hover:text-text-primary'
               }`}
             >
               {item.label}
-            </button>
+            </a>
           ))}
           
           {/* Language Toggle */}
           <button 
             onClick={toggleLanguage}
-            className="flex items-center gap-2 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors bg-bg-card px-3 py-1.5 rounded-full"
+            className="flex items-center gap-2 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors bg-bg-card hover:bg-bg-card-hover border border-border-subtle px-3 py-1.5 rounded-full shadow-sm"
           >
             <Globe size={14} />
             {lang === 'it' ? 'IT' : 'EN'}
@@ -75,29 +94,34 @@ const Navbar = ({ activeSection }: NavbarProps) => {
           {/* Theme Toggle */}
           <button 
             onClick={toggleTheme}
-            className="text-text-secondary hover:text-text-primary transition-colors p-2"
+            className="text-text-secondary hover:text-text-primary transition-colors p-2 rounded-lg hover:bg-bg-card border border-border-subtle shadow-sm"
             aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-700" />}
           </button>
         </div>
 
         {/* Mobile Menu Toggle */}
-        <div className="flex items-center gap-3 md:hidden">
+        <div className="flex items-center gap-2 md:hidden">
           <button 
             onClick={toggleTheme}
-            className="text-text-secondary hover:text-text-primary transition-colors p-2"
+            className="text-text-secondary hover:text-text-primary transition-colors p-2 rounded-lg hover:bg-bg-card border border-border-subtle"
+            aria-label="Toggle theme"
           >
-            {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
+            {theme === 'dark' ? <Sun size={18} className="text-amber-400" /> : <Moon size={18} className="text-slate-700" />}
           </button>
           <button 
             onClick={toggleLanguage}
-            className="flex items-center gap-1 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors bg-bg-card px-2 py-1.5 rounded-full"
+            className="flex items-center gap-1 text-xs font-bold text-text-secondary hover:text-text-primary transition-colors bg-bg-card border border-border-subtle px-2.5 py-1.5 rounded-full"
           >
             <Globe size={14} />
             {lang === 'it' ? 'IT' : 'EN'}
           </button>
-          <button className="text-text-secondary p-1" onClick={() => setIsOpen(!isOpen)}>
+          <button 
+            className="text-text-primary p-2 rounded-lg hover:bg-bg-card active:scale-95 transition-all" 
+            onClick={() => setIsOpen(!isOpen)}
+            aria-label="Menu"
+          >
             {isOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -110,20 +134,27 @@ const Navbar = ({ activeSection }: NavbarProps) => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-[#0a0a0a] border-b border-border-subtle overflow-hidden"
+            transition={{ duration: 0.22, ease: "easeInOut" }}
+            className="md:hidden bg-bg-nav/98 backdrop-blur-xl border-b border-border-subtle shadow-2xl overflow-hidden"
           >
-            <div className="px-6 py-4 flex flex-col gap-4">
+            <div className="px-4 py-4 flex flex-col gap-1.5">
               {items.map((item) => (
-                <button
+                <a
                   key={item.id}
-                  onClick={() => handleNavClick(item.id)}
-                  className={`flex items-center gap-3 text-sm font-medium transition-colors ${
-                    activeSection === item.id ? 'text-sky-400' : 'text-text-secondary'
+                  href={`#${item.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.id);
+                  }}
+                  className={`flex items-center gap-3.5 px-4 py-3 rounded-xl text-base font-medium transition-all active:scale-[0.98] ${
+                    activeSection === item.id 
+                      ? 'bg-sky-500/15 text-sky-500 font-semibold shadow-xs' 
+                      : 'text-text-secondary hover:text-text-primary hover:bg-bg-card active:bg-bg-card'
                   }`}
                 >
-                  <item.icon size={18} />
-                  {item.label}
-                </button>
+                  <item.icon size={20} className={activeSection === item.id ? 'text-sky-500' : 'text-text-muted'} />
+                  <span>{item.label}</span>
+                </a>
               ))}
             </div>
           </motion.div>

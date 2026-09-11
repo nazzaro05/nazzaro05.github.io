@@ -70,7 +70,7 @@ const InfrastructureSection = () => {
           <p className="text-text-secondary text-sm leading-relaxed mb-6">
             {content.containerDesc}
           </p>
-          <div className="bg-sky-500/5 p-4 rounded-xl border border-sky-500/10">
+          <div className="bg-sky-500/10 p-4 rounded-xl border border-sky-500/20">
             <h4 className="text-sky-400 text-xs font-semibold uppercase mb-2 flex items-center gap-2">
               <ShieldAlert size={14}/> {content.securityTitle}
             </h4>
