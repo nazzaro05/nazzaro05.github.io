@@ -50,7 +50,7 @@ const CybersecuritySection = () => {
         </p>
       </div>
 
-      <div className="bg-bg-card border border-border-subtle rounded-2xl p-10 relative overflow-hidden">
+      <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-10 relative overflow-hidden">
         <div className="absolute top-0 left-0 w-1 h-full bg-red-500/50" />
         <div className="flex flex-col md:flex-row items-start gap-8">
           <div className="p-5 bg-red-500/10 rounded-2xl shrink-0">
@@ -70,7 +70,7 @@ const CybersecuritySection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <Target className="text-emerald-400 mb-5" size={28} />
           <h3 className="text-xl font-semibold text-text-primary mb-3">{content.labTitle}</h3>
           <p className="text-text-secondary text-sm leading-relaxed">
@@ -78,7 +78,7 @@ const CybersecuritySection = () => {
           </p>
         </div>
         
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <Crosshair className="text-sky-400 mb-5" size={28} />
           <h3 className="text-xl font-semibold text-text-primary mb-3">{content.foundationsTitle}</h3>
           <p className="text-text-secondary text-sm leading-relaxed">

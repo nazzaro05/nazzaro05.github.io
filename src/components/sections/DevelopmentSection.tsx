@@ -53,7 +53,7 @@ const DevelopmentSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-indigo-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <BookOpen className="text-indigo-400 mb-6" size={32} />
           <h3 className="text-2xl font-semibold text-text-primary mb-4">{content.studyTitle}</h3>
@@ -76,7 +76,7 @@ const DevelopmentSection = () => {
           </ul>
         </div>
 
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-amber-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Layers className="text-amber-400 mb-6" size={32} />
           <h3 className="text-2xl font-semibold text-text-primary mb-4">{content.stackTitle}</h3>

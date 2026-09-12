@@ -63,7 +63,7 @@ const InfrastructureSection = () => {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-sky-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Server className="text-sky-400 mb-6" size={32} />
           <h3 className="text-xl font-semibold text-text-primary mb-3">{content.containerTitle}</h3>
@@ -80,7 +80,7 @@ const InfrastructureSection = () => {
           </div>
         </div>
 
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8 relative overflow-hidden group">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8 relative overflow-hidden group">
           <div className="absolute top-0 left-0 w-full h-1 bg-emerald-500/50 transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
           <Network className="text-emerald-400 mb-6" size={32} />
           <h3 className="text-xl font-semibold text-text-primary mb-3">{content.proxyTitle}</h3>
@@ -93,7 +93,7 @@ const InfrastructureSection = () => {
         </div>
       </div>
 
-      <div className="bg-bg-card border border-border-subtle rounded-2xl p-10">
+      <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-10">
         <div className="flex items-center gap-4 mb-8 border-b border-border-subtle pb-6">
           <Terminal className="text-purple-400" size={32} />
           <h2 className="text-2xl font-semibold text-text-primary">{content.linuxTitle}</h2>

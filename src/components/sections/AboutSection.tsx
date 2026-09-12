@@ -77,7 +77,7 @@ const AboutSection = () => {
 
       {/* Education & Certs */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <div className="flex items-center gap-3 mb-6">
             <GraduationCap className="text-sky-400" size={24} />
             <h3 className="text-xl font-semibold text-text-primary">{content.education}</h3>
@@ -91,7 +91,7 @@ const AboutSection = () => {
           </ul>
         </div>
         
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <div className="flex items-center gap-3 mb-6">
             <Award className="text-sky-400" size={24} />
             <h3 className="text-xl font-semibold text-text-primary">{content.certs}</h3>
@@ -119,7 +119,7 @@ const AboutSection = () => {
 
       {/* Volunteering & Languages */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <div className="flex items-center gap-3 mb-6">
             <Heart className="text-red-400" size={24} />
             <h3 className="text-xl font-semibold text-text-primary">{content.volunteering}</h3>
@@ -136,7 +136,7 @@ const AboutSection = () => {
           </ul>
         </div>
 
-        <div className="bg-bg-card border border-border-subtle rounded-2xl p-8">
+        <div className="bg-bg-card border border-border-subtle rounded-2xl transition-all duration-300 hover:-translate-y-1.5 hover:shadow-xl hover:border-sky-500/30 hover:bg-bg-card-hover p-8">
           <div className="flex items-center gap-3 mb-6">
             <Languages className="text-emerald-400" size={24} />
             <h3 className="text-xl font-semibold text-text-primary">{content.languages}</h3>
